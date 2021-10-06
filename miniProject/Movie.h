@@ -25,6 +25,7 @@ public:
     int numVotes;
 
     Movie(QString titleID, int ordering, QString title, QString region, QString language, QString types, QString attributes, int isOriginalTitle, double averageRating, int numVotes) {
+
         this->titleID=titleID;
         this->ordering=ordering;
         this->title=title;
