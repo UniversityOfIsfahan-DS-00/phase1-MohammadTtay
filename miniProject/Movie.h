@@ -58,7 +58,7 @@ public:
     void print() {
 
         cout << "||\tTitleID : " << this -> titleID.toStdString() << endl;
-        cout << "||\t||ordering : " << this -> ordering << endl;
+        cout << "||\tordering : " << this -> ordering << endl;
         cout << "||\ttitle : " << this -> title.toStdString() << endl;
         cout << "||\tregion : " << this -> region.toStdString() << endl;
         cout << "||\tlanguage : " << this -> language.toStdString() << endl;
