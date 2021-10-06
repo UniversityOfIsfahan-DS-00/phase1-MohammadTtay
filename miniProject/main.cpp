@@ -21,6 +21,11 @@ void topTen();
 vector < Movie > movies;
 vector < User > users;
 
+bool comp(Movie first, Movie second)
+{
+    return (first.averageRating > second.averageRating);
+}
+
 int main() {
     if (!readFiles()) { //Read The Information From "title.akas.txt" And "title.rating.txt" When Program Starts
         return 0;
@@ -42,7 +47,7 @@ int main() {
             slPage();
             break;
         case 2:
-            topTen();//Still Not Working
+            topTen();
             break;
         case 3:
             exit(0);
@@ -253,4 +258,24 @@ void updateFile() {
 
 }
 
-void topTen() {}
+void topTen() {
+
+    system("cls");
+    cout << "::[ IMDB Rating ]::\n\n";
+    cout << "+Top 10 as rated by IMDb Users+\n\n";
+
+    cout << "=============================================================\n";
+    vector < Movie > sortedMovies;
+    sortedMovies=movies;
+    sort(sortedMovies.begin(),sortedMovies.end(),comp);
+    int count=0;
+    for(auto x : sortedMovies){
+        count++;
+        if(count>10) break;
+        x.print();
+    }
+    cout << "\n\n\n\nPress Any Key to Go Back...";
+    getch();
+    return;
+
+}
